@@ -8,10 +8,6 @@ function RBTreeGenerator() {
   const [values, setValues] = useState([]);
   const [svgContent, setSvgContent] = useState('');
 
-  useEffect(() => {
-    handleGenerateRBTree();
-  }, []);
-
   const handleGenerateRBTree = async () => {
     try {
       const res = await axios.post('/api/generate');
@@ -23,6 +19,10 @@ function RBTreeGenerator() {
       console.error('Error generating RB Tree:', error);
     }
   };
+
+  useEffect(() => {
+    // This useEffect runs only on component mount
+  }, []);
 
   const handleInsertValue = async () => {
     try {
