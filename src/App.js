@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
+
+const API_BASE_URL = 'https://mahnameisayush.pythonanywhere.com'; // Directly specify the base URL
 
 function RBTreeGenerator() {
   const [response, setResponse] = useState('');
@@ -8,9 +10,9 @@ function RBTreeGenerator() {
   const [values, setValues] = useState([]);
   const [svgContent, setSvgContent] = useState('');
 
-  const handleGenerateRBTree = async () => {
+  const handleGenerateRBTree = useCallback(async () => {
     try {
-      const res = await axios.post('/api/generate');
+      const res = await axios.post(`${API_BASE_URL}/generate`);
       console.log(res.data);
       setResponse(res.data);
       setValues([]); // Clear the list of nodes
@@ -18,16 +20,16 @@ function RBTreeGenerator() {
     } catch (error) {
       console.error('Error generating RB Tree:', error);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    // This useEffect runs only on component mount
-  }, []);
+    handleGenerateRBTree();
+  }, [handleGenerateRBTree]);
 
   const handleInsertValue = async () => {
     try {
       const value = parseInt(insertValue);
-      const res = await axios.post('/api/insert', { value });
+      const res = await axios.post(`${API_BASE_URL}/insert`, { value });
       console.log(res.data);
       setResponse(res.data);
       setInsertValue(''); // Clear input field
@@ -40,7 +42,7 @@ function RBTreeGenerator() {
 
   const handleDeleteValue = async (value) => {
     try {
-      const res = await axios.post('/api/delete', { value });
+      const res = await axios.post(`${API_BASE_URL}/delete`, { value });
       console.log(res.data);
       setResponse(res.data);
       setValues(values.filter(v => v !== value)); // Remove value from the list
@@ -52,7 +54,7 @@ function RBTreeGenerator() {
 
   const handleFetchSVG = async () => {
     try {
-      const res = await axios.get('/api/svg', { responseType: 'text' });
+      const res = await axios.get(`${API_BASE_URL}/svg`, { responseType: 'text' });
       setSvgContent(res.data);
     } catch (error) {
       console.error('Error fetching SVG:', error);
