@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/red_black_tree/static/css/main.7109f9f0.css",
+    "main.js": "/red_black_tree/static/js/main.c4e554f9.js",
+    "static/js/453.1e668b5a.chunk.js": "/red_black_tree/static/js/453.1e668b5a.chunk.js",
+    "index.html": "/red_black_tree/index.html",
+    "main.7109f9f0.css.map": "/red_black_tree/static/css/main.7109f9f0.css.map",
+    "main.c4e554f9.js.map": "/red_black_tree/static/js/main.c4e554f9.js.map",
+    "453.1e668b5a.chunk.js.map": "/red_black_tree/static/js/453.1e668b5a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7109f9f0.css",
+    "static/js/main.c4e554f9.js"
+  ]
+}
