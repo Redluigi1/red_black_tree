@@ -1,6 +1,6 @@
 # Red-Black Tree
 
-This project aims to impelent Red-Black Trees in Python, and includes a web interface for visualizing them. It consists of a backend implemented using Flask and hosted on PythonAnywhere, and a frontend built with React and hosted on Netlify. The visualization is created using Graphviz, which dynamically updates as the user interacts with the tree by inserting and deleting nodes.
+This project aims to implement Red-Black Trees in Python, and includes a web interface for visualizing them. It consists of a backend implemented using Flask and hosted on PythonAnywhere, and a frontend built with React and hosted on Netlify. The visualization is created using Graphviz, which dynamically updates as the user interacts with the tree by inserting and deleting nodes.
 
 ## Project Overview
 
